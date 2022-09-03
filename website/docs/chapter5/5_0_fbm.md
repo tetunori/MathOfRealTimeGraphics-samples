@@ -8,7 +8,7 @@ sidebar_position: 1
 import GLSLCanvasBox from "../../static/js/glslcanvas-box";
 
 <GLSLCanvasBox
-  fragUrl='/frags/ch5/5_0_fbm.frag'
+  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch5/5_0_fbm.frag'
 />
 
 ```glsl showLineNumbers title="5_0_fbm.frag"

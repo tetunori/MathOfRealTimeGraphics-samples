@@ -8,7 +8,7 @@ sidebar_position: 3
 import GLSLCanvasBox from "../../static/js/glslcanvas-box";
 
 <GLSLCanvasBox
-  fragUrl='/frags/ch4/4_2_rotNoise.frag'
+  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch4/4_2_rotNoise.frag'
 />
 
 ```glsl showLineNumbers title="4_2_rotNoise.frag"
