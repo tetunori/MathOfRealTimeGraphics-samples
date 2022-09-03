@@ -9,7 +9,7 @@ const config = {
   title: 'Samples for "Math of Real-time Graphics"📚',
   tagline: 'UNOFFICIAL sample viewer for the book "Mathmatics of Real-Time Graphics"📚',
   url: 'https://tetunori.github.io/MathOfRealTimeGraphics-samples/',
-  baseUrl: '/',
+  baseUrl: '/MathOfRealTimeGraphics-samples/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
