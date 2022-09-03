@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function GLSLCanvasBox({
+  baseUrl,
   fragUrl,
   disableFullscreen,
   limitWidth,
@@ -78,11 +79,11 @@ export default function GLSLCanvasBox({
           <head>
             <meta charset="utf-8">
             <title>GlslCanvas</title>
-            <link type="text/css" href="/css/glsl-canvas.css" rel="stylesheet"/>
-            <script type="text/javascript" src="/js/glsl-canvas.min.js"></script>
+            <link type="text/css" href="${baseUrl}/css/glsl-canvas.css" rel="stylesheet"/>
+            <script type="text/javascript" src="${baseUrl}/js/glsl-canvas.min.js"></script>
           </head>
           <body>
-            <canvas class="glsl-canvas" data-fragment-url="${fragUrl}"></canvas>
+            <canvas class="glsl-canvas" data-fragment-url="${baseUrl}/${fragUrl}"></canvas>
           </body>
           <script>
             var options = {
