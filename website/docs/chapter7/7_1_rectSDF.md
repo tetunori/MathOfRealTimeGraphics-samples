@@ -12,8 +12,6 @@ import GLSLCanvasBox from "../../static/js/glslcanvas-box";
 />
 
 ```glsl showLineNumbers title="7_1_rectSDF.frag"
-
-```
 #version 300 es
 precision highp float;
 precision highp int;
@@ -36,3 +34,4 @@ void main(){
     fragColor.rgb = vec3(contour(rect(pos, vec2(0.0), vec2(0.5)), 0.1));
     fragColor.a = 1.0;
 }
+```
