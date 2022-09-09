@@ -139,5 +139,6 @@ void main(){
     pos = 3.0 * pos+u_time;
     fragColor.rgb = vec3(dot(vec2(1), gradAnalyticDiff(pos)));
     fragColor.a = 1.0;
-}```
+}
+```
 
