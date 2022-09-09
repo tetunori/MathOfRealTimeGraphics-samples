@@ -1,16 +1,3 @@
----
-sidebar_position: 2
----
-
-# Exercise 3.1
-
-import GLSLCanvasBox from "../../static/js/glslcanvas-box";
-
-<GLSLCanvasBox
-  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch3/exercise_3_1.frag'
-/>
-
-```glsl showLineNumbers title="exercise_3_1.frag"
 #version 300 es
 precision highp float;
 precision highp int;
@@ -99,4 +86,3 @@ void main(){
       fragColor = vec4(vnoise33(vec3(pos, u_time)), 1.0);
     }
 }
-```
