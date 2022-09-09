@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Problem 2.1
+# Exercise 2.1
 ## Calculation
 | Number | Calculation |
 | :---: | :---: |
@@ -21,10 +21,10 @@ sidebar_position: 3
 import GLSLCanvasBox from "../../static/js/glslcanvas-box";
 
 <GLSLCanvasBox
-  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch2/problem_2_1.frag'
+  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch2/exercise_2_1.frag'
 />
 
-```glsl showLineNumbers title="problem_2_1.frag"
+```glsl showLineNumbers title="exercise_2_1.frag"
 #version 300 es
 precision highp float;
 precision highp int;

@@ -19,7 +19,7 @@ sidebar_position: 1
 ## Chapter 2: Pseudo-Random Number
 [![2_0_legacy](./chapter2/2_0_legacy.png)](./chapter2/2_0_legacy.md) 
 [![2_1_binary](./chapter2/2_1_binary.png)](./chapter2/2_1_binary.md) 
-[![Problem_2_1](./chapter2/problem_2_1.png)](./chapter2/problem_2_1.md) 
+[![Exercise_2_1](./chapter2/exercise_2_1.png)](./chapter2/exercise_2_1.md) 
 [![2_2_hash1d](./chapter2/2_2_hash1d.png)](./chapter2/2_2_hash1d.md) 
 [![2_3_hash2d3d](./chapter2/2_3_hash2d3d.png)](./chapter2/2_3_hash2d3d.md) 
 
