@@ -106,7 +106,7 @@ void main(){
     channel = int(gl_FragCoord.x * 2.0 / u_resolution.x);
     pos = 10.0 * pos + u_time;
     if (channel < 1){
-        fragColor = vec4(gnoise21(pos));  //right
+        fragColor = vec4(gnoise21(pos));  //left
     } else {
         fragColor = vec4(gnoise31(vec3(pos, u_time)));
         
