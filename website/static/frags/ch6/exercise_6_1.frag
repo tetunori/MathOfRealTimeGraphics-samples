@@ -88,7 +88,8 @@ float voronoiEdge2d(vec2 p){
     return md;
 
 }
-vec3 voronoi3(vec3 p){
+
+float voronoiEdge3d(vec3 p){
     vec3 n = floor(p + 0.5);
     float dist = sqrt(3.0);
     vec3 id;
@@ -113,8 +114,26 @@ vec3 voronoi3(vec3 p){
             }
         }
     }
-    return id;
+
+    float md = sqrt(3.0);
+    vec3 a = id + hash33(id) - 0.5 - p;
+
+    for(float k = -2.0; k <= 2.0; k++ ){
+      for(float j = -2.0; j <= 2.0; j++ ){
+        for(float i = -2.0; i <= 2.0; i++ ){
+          vec3 glid = id + vec3(float(i),float(j),float(k));
+          vec3 b = glid + hash33(glid) - 0.5 - p;
+          if( dot(a - b, a - b) > 0.0001 ){
+            // it is not a
+            md = min( md, dot( 0.5*(a + b), normalize(b - a) ) );
+          }
+        }
+      }
+    }
+
+    return md;
 }
+
 void main(){
     vec2 pos = gl_FragCoord.xy/ min(u_resolution.x, u_resolution.y);
     channel = int(2.0 * gl_FragCoord.x/ u_resolution.x); 
@@ -124,6 +143,8 @@ void main(){
       mix( vec3(0.12, 0.62, 0.73), 
            vec3(0.08,0.18,0.28), 
            smoothstep( 0.02, 0.04, voronoiEdge2d(pos) )) : 
-      vec3(hash33(voronoi3(vec3(pos, u_time))));
+      mix( vec3(0.12, 0.62, 0.73), 
+           vec3(0.08,0.18,0.28), 
+           smoothstep( 0.02, 0.04, voronoiEdge3d(vec3(pos, u_time)) ));
     fragColor.a = 1.0;
 }
