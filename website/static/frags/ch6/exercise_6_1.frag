@@ -51,6 +51,28 @@ vec3 hash33(vec3 p){
     return vec3(uhash33(n)) / vec3(UINT_MAX);
 }
 //end hash
+vec2 voronoi2(vec2 p){
+    vec2 n = floor(p + 0.5);
+    float dist = sqrt(2.0);
+    vec2 id;
+    for(float j = 0.0; j <= 2.0; j ++ ){
+        vec2 glid;
+        glid.y = n.y + sign(mod(j, 2.0) - 0.5) * ceil(j * 0.5);
+        if (abs(glid.y - p.y) - 0.5 > dist){
+            continue;
+        }
+        for(float i = -1.0; i <= 1.0; i ++ ){
+            glid.x = n.x + i;
+            vec2 jitter = hash22(glid) - 0.5;
+            if (length(glid + jitter - p) <= dist){
+                dist = length(glid + jitter - p);
+                id = glid;
+            }
+        }
+    }
+    return id;
+}
+
 float voronoiEdge2d(vec2 p){
     vec2 n = floor(p + 0.5);
     float dist = sqrt(2.0);
@@ -71,6 +93,7 @@ float voronoiEdge2d(vec2 p){
         }
     }
 
+    // Reference: https://iquilezles.org/articles/voronoilines/
     float md = sqrt(2.0);
     vec2 a = id + hash22(id) - 0.5 - p;
 
@@ -87,6 +110,34 @@ float voronoiEdge2d(vec2 p){
 
     return md;
 
+}
+
+vec3 voronoi3(vec3 p){
+    vec3 n = floor(p + 0.5);
+    float dist = sqrt(3.0);
+    vec3 id;
+    for(float k = 0.0; k <= 2.0; k ++ ){
+            vec3 glid;
+            glid.z = n.z + sign(mod(k, 2.0) - 0.5) * ceil(k * 0.5);
+            if (abs(glid.z - p.z) - 0.5 > dist){
+                continue;
+            }
+        for(float j = 0.0; j <= 2.0; j ++ ){
+            glid.y = n.y + sign(mod(j, 2.0) - 0.5) * ceil(j * 0.5);
+            if (abs(glid.y - p.y) - 0.5 > dist){
+                continue;
+            }
+            for(float i = -1.0; i <= 1.0; i ++ ){
+                glid.x = n.x + i;
+                vec3 jitter = hash33(glid) - 0.5;
+                if (length(glid + jitter - p) <= dist){
+                    dist = length(glid + jitter - p);
+                    id = glid;
+                }
+            }
+        }
+    }
+    return id;
 }
 
 float voronoiEdge3d(vec3 p){
@@ -114,7 +165,8 @@ float voronoiEdge3d(vec3 p){
             }
         }
     }
-
+    
+    // Reference: https://iquilezles.org/articles/voronoilines/
     float md = sqrt(3.0);
     vec3 a = id + hash33(id) - 0.5 - p;
 
@@ -139,12 +191,11 @@ void main(){
     channel = int(2.0 * gl_FragCoord.x/ u_resolution.x); 
     pos *= 10.0;
     pos += u_time;
-    fragColor.rgb = channel == 0 ? 
-      mix( vec3(0.12, 0.62, 0.73), 
-           vec3(0.08,0.18,0.28), 
+    fragColor = channel == 0 ? 
+      mix( vec4(1.0, 1.0, 1.0, 1.0), 
+           vec4(hash22(voronoi2(pos)), 1.0, 1.0 * (sin(u_time) + 0.5) ), 
            smoothstep( 0.02, 0.04, voronoiEdge2d(pos) )) : 
-      mix( vec3(0.12, 0.62, 0.73), 
-           vec3(0.08,0.18,0.28), 
+      mix( vec4(1.0, 1.0, 1.0, 1.0), 
+           vec4(hash33(voronoi3(vec3(pos, u_time))), 1.0 * (sin(u_time) + 0.5) ), 
            smoothstep( 0.02, 0.04, voronoiEdge3d(vec3(pos, u_time)) ));
-    fragColor.a = 1.0;
 }
