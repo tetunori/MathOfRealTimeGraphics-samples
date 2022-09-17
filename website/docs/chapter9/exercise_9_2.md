@@ -223,5 +223,23 @@ $$
 以上より、全ての点で微分可能であることが確かめられた。
 
 ### sminCubic()
-
-
+sminCubicについては、h(x)が共通なので、smin2と同様に証明が可能である。
+f(x)は
+$$
+f(x) = \left\{
+\begin{array}{ll}
+a(x) - h(x)h(x)h(x)k/6 & a(x) \leq b(x) \\
+b(x) - h(x)h(x)h(x)k/6 & a(x) > b(x)
+\end{array}
+\right.
+$$
+となり、その微分 $f'(x)$ が
+$$
+f'(x) = \left\{
+\begin{array}{ll}
+a'(x) - 3h'(x)h(x)h(x)k/6 = a'(x) - h'(x)h(x)h(x)k/2 & a(x) \leq b(x) \\
+b'(x) - 3h'(x)h(x)h(x)k/6 = b'(x) - h'(x)h(x)h(x)k/2 & a(x) > b(x)
+\end{array}
+\right.
+$$
+となるので、smin2時に証明した $x=x_0$, $x=x_1$ での微分可能性の確認方法がそのまま適用できる。
