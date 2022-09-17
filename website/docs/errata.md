@@ -85,6 +85,8 @@ h''(x) = \left\{
 $$
 
 ## P.131 Code 9.3
+This is not strictly a typo but if you want to conform to the text, this expression might be better.
+
 ```glsl
 float smin(float a, float b, float k){
   float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);
