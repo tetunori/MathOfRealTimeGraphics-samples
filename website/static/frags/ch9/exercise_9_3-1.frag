@@ -39,11 +39,11 @@ int polyidx = 0;
 
 // degree, v, w, u
 vec4[5] paramArray = vec4[](
-  vec4(3.0, 0.0, 0.0, 1.0),
-  vec4(4.0, 0.0, 0.0, 1.0),
-  vec4(4.0, 0.0, 1.0, 0.0),
-  vec4(5.0, 0.0, 0.0, 1.0),
-  vec4(5.0, 0.0, 1.0, 0.0)
+  vec4(3.0, 0.0, 0.0, 1.0), // Tetrahedron 
+  vec4(4.0, 0.0, 0.0, 1.0), // Hexahedron
+  vec4(4.0, 0.0, 1.0, 0.0), // Octahedron
+  vec4(5.0, 0.0, 0.0, 1.0), // Dodecahedron
+  vec4(5.0, 0.0, 1.0, 0.0)  // Icosahedron
 );
 
 void init( int idx ) {

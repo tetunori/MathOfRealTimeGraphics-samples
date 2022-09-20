@@ -38,12 +38,19 @@ float V=0., W=1., U = 0.;
 int polyidx = 0;
 
 // degree, v, w, u
-vec4[5] paramArray = vec4[](
-  vec4(3.0, 0.0, 0.0, 1.0),
-  vec4(4.0, 0.0, 0.0, 1.0),
-  vec4(4.0, 0.0, 1.0, 0.0),
-  vec4(5.0, 0.0, 0.0, 1.0),
-  vec4(5.0, 0.0, 1.0, 0.0)
+vec4[11] paramArray = vec4[](
+  vec4(3.0, 1.0, 0.0, 1.0), // 切頂四面体
+  vec4(4.0, 1.0, 0.0, 1.0), // 切頂六面体
+  vec4(4.0, 1.0, 1.0, 0.0), // 切頂八面体
+  vec4(5.0, 1.0, 0.0, 1.0), // 切頂十二面体
+  vec4(5.0, 1.0, 1.0, 0.0), // 切頂二十面体
+  vec4(4.0, 1.0, 0.0, 0.0), // 立方八面体
+  vec4(5.0, 1.0, 0.0, 0.0), // 二十・十二面体
+  vec4(4.0, 0.0, 1.0, 1.0), // 斜方立方八面体
+  vec4(5.0, 0.0, 1.0, 1.0), // 斜方二十・十二面体
+  vec4(4.0, 1.0, 1.0, 1.0), // 斜方切頂立方八面体
+  vec4(5.0, 1.0, 1.0, 1.0) // 斜方切頂二十・十二面体
+  // 変形立方体、変形十二面体はこの形では作れない。
 );
 
 void init( int idx ) {
@@ -119,7 +126,7 @@ void main(){
     vec3 lDir = euler(vec3(0.0, 0.0, 1.0), t);
 
     float sec = 6.0;
-    polyidx = int(floor(mod(float(u_time),5.0*sec)/sec));
+    polyidx = int(floor(mod(float(u_time),11.0*sec)/sec));
 
     vec3 ray = cSide * p.x + cUp * p.y + cDir * targetDepth;
     vec3 rPos = ray + cPos;

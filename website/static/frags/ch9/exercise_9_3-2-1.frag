@@ -1,18 +1,3 @@
----
-sidebar_position: 12
----
-
-# Exercise 9.3-1
-## 5 Regular Polyhedrons: 
-Tetrahedron -> Hexahedron -> Octahedron -> Dodecahedron -> Icosahedron  
-
-import GLSLCanvasBox from "../../static/js/glslcanvas-box";
-
-<GLSLCanvasBox
-  baseUrl='/MathOfRealTimeGraphics-samples'  fragUrl='/frags/ch9/exercise_9_3-1.frag'
-/>
-
-```glsl showLineNumbers title="exercise_9_3-1.frag"
 #version 300 es
 precision highp float;
 precision highp int;
@@ -53,12 +38,19 @@ float V=0., W=1., U = 0.;
 int polyidx = 0;
 
 // degree, v, w, u
-vec4[5] paramArray = vec4[](
-  vec4(3.0, 0.0, 0.0, 1.0), // Tetrahedron 
-  vec4(4.0, 0.0, 0.0, 1.0), // Hexahedron
-  vec4(4.0, 0.0, 1.0, 0.0), // Octahedron
-  vec4(5.0, 0.0, 0.0, 1.0), // Dodecahedron
-  vec4(5.0, 0.0, 1.0, 0.0)  // Icosahedron
+vec4[11] paramArray = vec4[](
+  vec4(3.0, 1.0, 0.0, 1.0), // 切頂四面体, Truncated tetrahedron
+  vec4(4.0, 1.0, 0.0, 1.0), // 切頂六面体, Truncated cube
+  vec4(4.0, 1.0, 1.0, 0.0), // 切頂八面体, Truncated octahedron
+  vec4(5.0, 1.0, 0.0, 1.0), // 切頂十二面体, Truncated dodecahedron
+  vec4(5.0, 1.0, 1.0, 0.0), // 切頂二十面体, Truncated icosahedron
+  vec4(4.0, 1.0, 0.0, 0.0), // 立方八面体, Cuboctahedron
+  vec4(5.0, 1.0, 0.0, 0.0), // 二十・十二面体, Icosidodecahedron
+  vec4(4.0, 0.0, 1.0, 1.0), // 斜方立方八面体, Rhombicuboctahedron
+  vec4(5.0, 0.0, 1.0, 1.0), // 斜方二十・十二面体, Rhombicosidodecahedron
+  vec4(4.0, 1.0, 1.0, 1.0), // 斜方切頂立方八面体, Truncated cuboctahedron
+  vec4(5.0, 1.0, 1.0, 1.0) // 斜方切頂二十・十二面体, Truncated icosidodecahedron
+  // 変形立方体、変形十二面体はこの形では作れない。
 );
 
 void init( int idx ) {
@@ -134,7 +126,7 @@ void main(){
     vec3 lDir = euler(vec3(0.0, 0.0, 1.0), t);
 
     float sec = 6.0;
-    polyidx = int(floor(mod(float(u_time),5.0*sec)/sec));
+    polyidx = int(floor(mod(float(u_time),11.0*sec)/sec));
 
     vec3 ray = cSide * p.x + cUp * p.y + cDir * targetDepth;
     vec3 rPos = ray + cPos;
@@ -153,4 +145,3 @@ void main(){
     }
     fragColor.a = 1.0;
 }
-```
