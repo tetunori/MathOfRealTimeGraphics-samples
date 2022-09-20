@@ -65,7 +65,7 @@ void init( int idx ) {
 }
 
 vec3 fold(vec3 pos) {
-	int max = int(Degree);
+	int max = 5; //int(Degree);
 	for(int i=0;i<7;i++){
 		pos.xy=abs(pos.xy);
 		float t=-2.*min(0.,dot(pos,nc));
