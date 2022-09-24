@@ -30,9 +30,12 @@ float smin(float d1, float d2, float r){
 // https://github.com/Syntopia/Polytopia/blob/master/polyhedron.glsl
 // https://syntopia.github.io/Polytopia/polytopes.html
 
+// Reference: Polyhedron again
+// https://www.shadertoy.com/view/XlX3zB by knighty 
+
 #define PI 3.141592
 
-vec3 nc,pNorm,pab,pbc,pca;
+vec3 nc,initVertex,pab,pbc,pca;
 float Degree = 5.0;
 float V=0., W=1., U = 0.;
 int polyidx = 0;
@@ -61,12 +64,12 @@ void init( int idx ) {
   U = param.w;
 
 	float cospin=cos(PI/Degree), scospin=sqrt(0.75-cospin*cospin);
-	nc=vec3(-0.5,-cospin,scospin);
+	nc=vec3(-0.5,-cospin,scospin);// 3rd folding plane. The two others are xz and yz planes
 	pab=vec3(0.,0.,1.);
 	pbc=vec3(scospin,0.,0.5);
 	pca=vec3(0.,scospin,cospin);
 
-	pNorm=normalize((V*pab+W*pbc+U*pca));
+	initVertex=normalize((V*pab+W*pbc+U*pca));
 	pbc=normalize(pbc);
 	pca=normalize(pca);
 }
@@ -83,9 +86,9 @@ vec3 fold(vec3 pos) {
 }
 
 float D2Planes(vec3 pos) {
-	float d0=dot(pos,pab)-dot(pab,pNorm);
-	float d1=dot(pos,pbc)-dot(pbc,pNorm);
-	float d2=dot(pos,pca)-dot(pca,pNorm);
+	float d0=dot(pos,pab)-dot(pab,initVertex);
+	float d1=dot(pos,pbc)-dot(pbc,initVertex);
+	float d2=dot(pos,pca)-dot(pca,initVertex);
 	
 	return abs(max(max(d0,d1),d2));
 }
@@ -113,35 +116,35 @@ vec3 gradSDF(vec3 p){
 }
 
 void main(){
-    vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution) / min(u_resolution.x, u_resolution.y);
-    
-    vec3 t = 2.0 + vec3(u_time * 0.5);
-    vec3 cPos = euler(vec3(0.0, 0.0, 2.0), t);
-    vec3 cDir = euler(vec3(0.0, 0.0, -1.0), t);
-    vec3 cUp = euler(vec3(0.0, 1.0, 0.0), t);
-    vec3 cSide = cross(cDir, cUp);
-    
-    float targetDepth = 1.0;
-    
-    vec3 lDir = euler(vec3(0.0, 0.0, 1.0), t);
+  vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution) / min(u_resolution.x, u_resolution.y);
+  
+  vec3 t = 2.0 + vec3(u_time * 0.5);
+  vec3 cPos = euler(vec3(0.0, 0.0, 2.0), t);
+  vec3 cDir = euler(vec3(0.0, 0.0, -1.0), t);
+  vec3 cUp = euler(vec3(0.0, 1.0, 0.0), t);
+  vec3 cSide = cross(cDir, cUp);
+  
+  float targetDepth = 1.0;
+  
+  vec3 lDir = euler(vec3(0.0, 0.0, 1.0), t);
 
-    float sec = 6.0;
-    polyidx = int(floor(mod(float(u_time),11.0*sec)/sec));
+  float sec = 6.0;
+  polyidx = int(floor(mod(float(u_time),11.0*sec)/sec));
 
-    vec3 ray = cSide * p.x + cUp * p.y + cDir * targetDepth;
-    vec3 rPos = ray + cPos;
-    ray = normalize(ray);
-    fragColor.rgb = vec3(0.078, 0.129, 0.239);
-    for(int i = 0; i < 50; i ++ ){
-        if (sceneSDF(rPos) > 0.001){
-            rPos += sceneSDF(rPos) * ray;
-        } else {
-            float amb = 0.1;
-            float diff = 0.9 * max(dot(normalize(lDir), gradSDF(rPos)), 0.0);
-            vec3 col = vec3(0.988, 0.639, 0.067);
-            fragColor.rgb = col * (diff + amb);
-            break;
-        }
-    }
-    fragColor.a = 1.0;
+  vec3 ray = cSide * p.x + cUp * p.y + cDir * targetDepth;
+  vec3 rPos = ray + cPos;
+  ray = normalize(ray);
+  fragColor.rgb = vec3(0.078, 0.129, 0.239);
+  for(int i = 0; i < 50; i ++ ){
+      if (sceneSDF(rPos) > 0.001){
+          rPos += sceneSDF(rPos) * ray;
+      } else {
+          float amb = 0.1;
+          float diff = 0.9 * max(dot(normalize(lDir), gradSDF(rPos)), 0.0);
+          vec3 col = vec3(0.988, 0.639, 0.067);
+          fragColor.rgb = col * (diff + amb);
+          break;
+      }
+  }
+  fragColor.a = 1.0;
 }
