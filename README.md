@@ -1,5 +1,5 @@
 # Samples for "Math of Real-time Graphics"📚
-Version 0.5.0   
+Version 0.6.0   
 <img src="./images/screenShot1.png" width="800px">
 
 # Description
@@ -7,6 +7,7 @@ You can view **UNOFFICIAL** samples for the book📚 ["Mathmatics of Real-Time G
 
 # Pages
 [Samples for "Math of Real-time Graphics"📚](https://tetunori.github.io/MathOfRealTimeGraphics-samples/)  
+Errata and answers to exercises are original and not guaranteed.
 
 # Environment💻
 ## Supported devices

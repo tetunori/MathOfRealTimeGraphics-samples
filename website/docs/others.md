@@ -6,7 +6,8 @@ sidebar_position: 13
 
 ## About this site📝
 You can view **UNOFFICIAL** samples for the book📚 ["Mathmatics of Real-Time Graphics" | "リアルタイムグラフィックスの数学"](https://gihyo.jp/book/2022/978-4-297-13034-3) written by Tatsuki HAYAMA and published by Gijutsu-Hyohron Co., Ltd.  
-Hosted on GitHub. Version `0.5.0`. 
+Errata and answers to exercises are original and not guaranteed.
+Hosted on GitHub. Version `0.6.0`. 
 
 ## Environment💻
 ### Supported devices
