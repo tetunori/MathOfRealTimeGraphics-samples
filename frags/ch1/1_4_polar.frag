@@ -10,7 +10,7 @@ float atan2(float y, float x){
     } else {
         return atan(y, x);
     }
-    // or use "?:" as follows:
+    // or use '?:' as follows:
     // return x == 0.0 ? sign(y) * PI / 2.0 : atan(y, x);
 }
 vec2 xy2pol(vec2 xy){
