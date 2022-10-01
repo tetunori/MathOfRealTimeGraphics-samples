@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function GLSLCanvasBox({
   baseUrl,
-  fragUrl,
+  fragCode,
   disableFullscreen,
   limitWidth,
   ...props
@@ -70,7 +70,6 @@ export default function GLSLCanvasBox({
 
       <iframe
         width="100%"
-        frameborder="0"
         height="500px"
         className={`docus-glslcanvas-box${fullscreen ? ' is-fullscreen' : ''}`}
         srcDoc={`
@@ -83,7 +82,7 @@ export default function GLSLCanvasBox({
             <script type="text/javascript" src="${baseUrl}/js/glsl-canvas.min.js"></script>
           </head>
           <body>
-            <canvas class="glsl-canvas" data-fragment-url="${baseUrl}/${fragUrl}"></canvas>
+            <canvas class="glsl-canvas" data-fragment="${fragCode}"></canvas>
           </body>
           <script>
             var options = {
@@ -96,7 +95,6 @@ export default function GLSLCanvasBox({
               doubleSided: false,
             };
             var canvas = document.querySelector(".glsl-canvas");
-            console.log(canvas);
             var glsl = new glsl.Canvas(canvas, options);
             glsl.setUniforms({});
           </script>

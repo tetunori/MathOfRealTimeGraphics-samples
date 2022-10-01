@@ -22,11 +22,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Another Feature...',
+    title: 'Live editor',
     Svg: require('@site/static/img/flying_saucer_flat.svg').default,
     description: (
       <>
-        Coming Soon.
+        Now, you can EDIT glsl samples in the codeblocks!
       </>
     ),
   },
