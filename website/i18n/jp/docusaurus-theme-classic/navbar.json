@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Top",
+    "description": "The title in the navbar"
+  },
+  "item.label.Samples": {
+    "message": "Samples",
+    "description": "Navbar item with label Samples"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

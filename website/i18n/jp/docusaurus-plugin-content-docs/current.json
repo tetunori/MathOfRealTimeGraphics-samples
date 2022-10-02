@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 0: Hello World": {
+    "message": "第0章: Hello World",
+    "description": "The label for category Chapter 0: Hello World in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 1: Interpolation": {
+    "message": "第1章: 補間",
+    "description": "The label for category Chapter 1: Interpolation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 2: Pseudo-Random Number": {
+    "message": "第2章: 疑似乱数",
+    "description": "The label for category Chapter 2: Pseudo-Random Number in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 3: Value Noise": {
+    "message": "第3章: 値ノイズ",
+    "description": "The label for category Chapter 3: Value Noise in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 4: Gradient Noise": {
+    "message": "第4章: 勾配ノイズ",
+    "description": "The label for category Chapter 4: Gradient Noise in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 5: Noise Recipe": {
+    "message": "第5章: ノイズの調理法",
+    "description": "The label for category Chapter 5: Noise Recipe in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 6: Cellular Noise": {
+    "message": "第6章: 胞体ノイズ",
+    "description": "The label for category Chapter 6: Cellular Noise in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 7: Distance and SDF": {
+    "message": "第7章: 距離とSDF",
+    "description": "The label for category Chapter 7: Distance and SDF in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 8: 3D Rendering": {
+    "message": "第8章: 3Dレンダリング",
+    "description": "The label for category Chapter 8: 3D Rendering in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Chapter 9: SDF Recipe": {
+    "message": "第9章: SDFの調理法",
+    "description": "The label for category Chapter 9: SDF Recipe in sidebar tutorialSidebar"
+  }
+}
