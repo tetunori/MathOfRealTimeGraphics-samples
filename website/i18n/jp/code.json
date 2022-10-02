@@ -253,5 +253,32 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "👀 See Samples!": {
+    "message": "👀 サンプルを見る"
+  },
+  "Samples for \"Math of Real-time Graphics\"📚": {
+    "message": "『リアルタイムグラフィックスの数学』サンプル集"
+  },
+  "UNOFFICIAL sample viewer for the book \"Mathmatics of Real-Time Graphics\"📚": {
+    "message": "書籍『リアルタイムグラフィックスの数学』の非公式サンプル集📚"
+  },
+  "'Easy to Play'": {
+    "message": "カンタン操作"
+  },
+  "'Multi-device Support'": {
+    "message": "マルチデバイス対応"
+  },
+  "'Live editor'": {
+    "message": "ライブエディター"
+  },
+  "With the book in hand, simply visit this site to view the shader samples immediately.": {
+    "message": "本を片手に当サイトを訪れるだけで、シェーダーサンプルをすぐに確認する事ができます。"
+  },
+  "With WebGL 2.0, all samples can be viewed in various environments such as PCs, smartphones, and tablets.": {
+    "message": "WebGL 2.0により、全てのサンプルはPC/スマホ/タブレットを含む様々な環境で見ることができます。"
+  },
+  "Now, you can EDIT glsl samples in the codeblocks!": {
+    "message": "サンプルのGLSLコードは、コードブロックの中で直接編集することができます。"
   }
 }

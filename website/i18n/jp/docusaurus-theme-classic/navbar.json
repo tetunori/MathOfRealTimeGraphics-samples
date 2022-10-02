@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "Top",
+    "message": "トップ",
     "description": "The title in the navbar"
   },
   "item.label.Samples": {
-    "message": "Samples",
+    "message": "サンプル",
     "description": "Navbar item with label Samples"
   },
   "item.label.GitHub": {
