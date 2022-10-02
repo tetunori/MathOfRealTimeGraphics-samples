@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # 4_0_gnoise
-## Code 4.1, Figure 4.3: 
+## コード 4.1, 図 4.3: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch4/4_0_gnoise.frag';

@@ -3,7 +3,7 @@ sidebar_position: 10
 ---
 
 # 8_8_box
-## Code 8.12, 8.13, Figure 8.10: 
+## コード 8.12, 8.13, 図 8.10: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch8/8_8_box.frag';

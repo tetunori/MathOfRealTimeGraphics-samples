@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Exercise 3.3
+# 問題 3.3
 
 まずは前方差分を得るために、任意の数 $a$ と、任意のとても小さい $\varepsilon>0$ を取り、$f(a+\varepsilon)$ を $a$ 点周りでテーラー展開して以下の式を得る。
 $$

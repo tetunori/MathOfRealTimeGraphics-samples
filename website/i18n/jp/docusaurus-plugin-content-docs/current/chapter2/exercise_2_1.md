@@ -2,8 +2,8 @@
 sidebar_position: 3
 ---
 
-# Exercise 2.1
-## Calculation
+# 問題 2.1
+## 計算
 | Number | Calculation |
 | :---: | :---: |
 |  1.0 | $(-1)^0 \times 2^{127-127} \times 1.0000 \dots 0$ |
@@ -17,7 +17,7 @@ sidebar_position: 3
 |  9.0 | $(-1)^0 \times 2^{130-127} \times 1.0010 \dots 0$ |
 | 10.0 | $(-1)^0 \times 2^{130-127} \times 1.0100 \dots 0$ |
 
-## Verification
+## 確認
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch2/exercise_2_1.frag';

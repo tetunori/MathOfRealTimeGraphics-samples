@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Exercise 8.1
+# 問題 8.1
 ## (1)
 $\textbf{x} = (x_1, x_2, x_3), \textbf{y} = (y_1, y_2, y_3)$ に対し、
 $$

@@ -3,7 +3,7 @@ sidebar_position: 11
 ---
 
 # 9_8_truncation
-## Code 9.9, Figure 9.15: 
+## コード 9.9, 図 9.15: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch9/9_8_truncation.frag';

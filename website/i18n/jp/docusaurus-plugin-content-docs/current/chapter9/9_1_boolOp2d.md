@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # 9_1_boolOp2d
-## Figure 9.2: 
+## 図 9.2: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch9/9_1_boolOp2d.frag';

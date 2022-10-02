@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # 2_1_binary
-## Code 2.2, Figure 2.3: 
+## コード 2.2, 図 2.3: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch2/2_1_binary.frag';

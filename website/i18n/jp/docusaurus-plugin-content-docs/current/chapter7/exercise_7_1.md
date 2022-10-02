@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Exercise 7.1
+# 問題 7.1
 
 $d(X, Y) = x_0 - y_0 + x_1 - y_1$ で定めた関数は距離の条件を満たさない。
 

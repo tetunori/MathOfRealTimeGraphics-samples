@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Exercise 6.1
+# 問題 6.1
 
 Inigo Quilezさんによる、下記記事を参考に、Voronoi edge shaderを構成した。  
 https://iquilezles.org/articles/voronoilines/  

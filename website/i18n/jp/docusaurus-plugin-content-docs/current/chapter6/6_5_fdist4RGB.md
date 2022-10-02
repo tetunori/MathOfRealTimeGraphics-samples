@@ -3,7 +3,7 @@ sidebar_position: 7
 ---
 
 # 6_5_fdist4RGB
-## Code 6.5, Figure 6.13: 
+## コード 6.5, 図 6.13: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch6/6_5_fdist4RGB.frag';

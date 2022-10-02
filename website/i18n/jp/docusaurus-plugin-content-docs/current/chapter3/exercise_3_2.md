@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Exercise 3.2
+# 問題 3.2
 
 まず、$h(x)$を$c(x)$を用いて表すと
 $$

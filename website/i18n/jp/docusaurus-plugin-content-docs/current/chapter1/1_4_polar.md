@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 
 # 1_4_polar
-## Code 1.6, 1.7, 1.8, Figure 1.10: 
+## コード 1.6, 1.7, 1.8, 図 1.10: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch1/1_4_polar.frag';

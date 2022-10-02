@@ -2,8 +2,8 @@
 sidebar_position: 12
 ---
 
-# Exercise 9.3-1
-## 5 Regular Polyhedrons: 
+# 問題 9.3-1
+## 5種の正多面体: 
 Tetrahedron -> Hexahedron -> Octahedron -> Dodecahedron -> Icosahedron  
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";

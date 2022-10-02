@@ -2,8 +2,8 @@
 sidebar_position: 6
 ---
 
-# Exercise 9.2
-## Introduction
+# 問題 9.2
+## 導入
 まずは、Codeをおさらいしておく。
 ```glsl
 // Original smin
@@ -30,8 +30,8 @@ float sminCubic(float a, float b, float k){
 ```
 これらの関数について、グラフの描画と微分可能性の証明を行う
 
-## Graphs
-### Original smin() for reference
+## グラフ
+### オリジナルのsmin() *参考
 [Graph in Desmos](https://www.desmos.com/calculator/pa6zkxseb5)  
 [![original smin graph](./originalSmin.svg) ](https://www.desmos.com/calculator/pa6zkxseb5)
 
@@ -47,7 +47,7 @@ float sminCubic(float a, float b, float k){
 [Graph in Desmos](https://www.desmos.com/calculator/ublwtwwxfu)  
 [![sminCubic graph](./sminCubic.svg)](https://www.desmos.com/calculator/ublwtwwxfu) 
 
-## Proofs
+## 証明
 ### smax()
 #### 準備
 smax関数の定義を確認すると、P.129-130で議論された $h(x),f(x),g(x)$ として

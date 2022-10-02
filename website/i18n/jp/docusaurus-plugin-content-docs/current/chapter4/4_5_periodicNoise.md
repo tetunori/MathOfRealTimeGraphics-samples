@@ -3,7 +3,7 @@ sidebar_position: 7
 ---
 
 # 4_5_periodicNoise
-## Code 4.8, Figure 4.9: 
+## コード 4.8, 図 4.9: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch4/4_5_periodicNoise.frag';

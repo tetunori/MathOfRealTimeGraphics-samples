@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 
 # 8_3_noiseTexturing
-## Code 8.7, Figure 8.6:  
+## コード 8.7, 図 8.6:  
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch8/8_3_noiseTexturing.frag';

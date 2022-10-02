@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Errata
+# 誤植
 Errata for 1st version( 2022/09/13 ).
 
 ## P.50 Equation (3.3)
@@ -84,7 +84,7 @@ h''(x) = \left\{
 \right.
 $$
 
-## P.131 Code 9.3
+## P.131 コード 9.3
 This is not strictly a typo but if you want to conform to the text, this expression might be better.
 
 ```glsl

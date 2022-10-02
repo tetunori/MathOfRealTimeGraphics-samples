@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # 7_0_circle
-## Figure 7.2, Code 7.1: 
+## 図 7.2, コード 7.1: 
 
 import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch7/7_0_circle.frag';
