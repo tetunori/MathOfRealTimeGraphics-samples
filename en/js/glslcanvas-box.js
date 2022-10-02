@@ -68,6 +68,7 @@ export default function GLSLCanvasBox({
 
       <iframe
         width="100%"
+        frameBorder="0"
         height="500px"
         className={`docus-glslcanvas-box${fullscreen ? ' is-fullscreen' : ''}`}
         srcDoc={`
