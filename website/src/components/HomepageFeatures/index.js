@@ -5,7 +5,7 @@ import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: <Translate >'Easy to Play'</Translate>,
+    title: <Translate >Easy to Play</Translate>,
     Svg: require('@site/static/img/thumbs_up_flat_default.svg').default,
     description: (
       <>
@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <Translate >'Multi-device Support'</Translate>,
+    title: <Translate >Multi-device Support</Translate>,
     Svg: require('@site/static/img/laptop_flat.svg').default,
     description: (
       <>
@@ -23,7 +23,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <Translate >'Live editor'</Translate>,
+    title: <Translate >Live editor</Translate>,
     Svg: require('@site/static/img/flying_saucer_flat.svg').default,
     description: (
       <>
