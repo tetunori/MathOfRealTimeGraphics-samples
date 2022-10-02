@@ -16,7 +16,7 @@ https://iquilezles.org/articles/voronoilines/
   distance = dot( 0.5*(a + b), normalize(b - a) );
 ```
 
-import LiveGlslCodeBlock from "../../static/js/liveGLSLCodeBlock";
+import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch6/exercise_6_1.frag';
 
 <LiveGlslCodeBlock fragName='exercise_6_1.frag' fragCode={code} />

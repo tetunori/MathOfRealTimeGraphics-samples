@@ -1,0 +1,42 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Links on the Book": {
+    "message": "Links on the Book",
+    "description": "The title of the footer links column with title=Links on the Book in the footer"
+  },
+  "link.title.About me": {
+    "message": "About me",
+    "description": "The title of the footer links column with title=About me in the footer"
+  },
+  "link.item.label.Samples": {
+    "message": "Samples",
+    "description": "The label of footer link with label=Samples linking to /docs/top"
+  },
+  "link.item.label.Others": {
+    "message": "Others",
+    "description": "The label of footer link with label=Others linking to /docs/others"
+  },
+  "link.item.label.Official Site": {
+    "message": "Official Site",
+    "description": "The label of footer link with label=Official Site linking to https://gihyo.jp/book/2022/978-4-297-13034-3"
+  },
+  "link.item.label.Author Twitter": {
+    "message": "Author Twitter",
+    "description": "The label of footer link with label=Author Twitter linking to https://twitter.com/hayamatomoe"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/tetunori/MathOfRealTimeGraphics-samples"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/tetunori_lego"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 Tetsunori Nakayama.",
+    "description": "The footer copyright"
+  }
+}

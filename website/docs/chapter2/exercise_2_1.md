@@ -19,7 +19,7 @@ sidebar_position: 3
 
 ## Verification
 
-import LiveGlslCodeBlock from "../../static/js/liveGLSLCodeBlock";
+import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch2/exercise_2_1.frag';
 
 <LiveGlslCodeBlock fragName='exercise_2_1.frag' fragCode={code} />

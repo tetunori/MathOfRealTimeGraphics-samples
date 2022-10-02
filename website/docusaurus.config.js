@@ -26,8 +26,24 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'jp',
+    locales: ['jp', 'en'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+      jp: {
+        label: '日本語',
+        direction: 'ltr',
+        htmlLang: 'ja',
+        calendar: 'gregory',
+        path: 'jp',
+      },
+    },
   },
 
   presets: [
@@ -68,6 +84,10 @@ const config = {
             position: 'left',
             label: 'Samples',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          }, 
           {
             href: 'https://github.com/tetunori/MathOfRealTimeGraphics-samples',
             label: 'GitHub',

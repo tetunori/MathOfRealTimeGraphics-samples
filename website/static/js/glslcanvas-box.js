@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
 export default function GLSLCanvasBox({
-  baseUrl,
   fragCode,
   disableFullscreen,
   limitWidth,
   ...props
 }) {
   const [fullscreen, setFullscreen] = useState(false);
-
   return (
     <div
       className="glslcanvas-box-wrapper"
@@ -70,6 +68,7 @@ export default function GLSLCanvasBox({
 
       <iframe
         width="100%"
+        frameBorder="0"
         height="500px"
         className={`docus-glslcanvas-box${fullscreen ? ' is-fullscreen' : ''}`}
         srcDoc={`
@@ -78,8 +77,8 @@ export default function GLSLCanvasBox({
           <head>
             <meta charset="utf-8">
             <title>GlslCanvas</title>
-            <link type="text/css" href="${baseUrl}/css/glsl-canvas.css" rel="stylesheet"/>
-            <script type="text/javascript" src="${baseUrl}/js/glsl-canvas.min.js"></script>
+            <link type="text/css" href="/MathOfRealTimeGraphics-samples/css/glsl-canvas.css" rel="stylesheet"/>
+            <script type="text/javascript" src="/MathOfRealTimeGraphics-samples/js/glsl-canvas.min.js"></script>
           </head>
           <body>
             <canvas class="glsl-canvas" data-fragment="${fragCode}"></canvas>

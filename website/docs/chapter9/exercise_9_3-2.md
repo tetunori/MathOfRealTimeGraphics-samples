@@ -7,7 +7,7 @@ sidebar_position: 13
 ### 11 polyhedrons except for snubs
 Truncated tetrahedron -> Truncated cube -> Truncated octahedron -> Truncated dodecahedron -> Truncated icosahedron -> Cuboctahedron -> Icosidodecahedron -> Rhombicuboctahedron -> Rhombicosidodecahedron -> Truncated cuboctahedron -> Truncated icosidodecahedron
 
-import LiveGlslCodeBlock from "../../static/js/liveGLSLCodeBlock";
+import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch9/exercise_9_3-2-1.frag';
 
 <LiveGlslCodeBlock fragName='exercise_9_3-2-1.frag' fragCode={code} />

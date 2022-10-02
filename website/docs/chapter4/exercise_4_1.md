@@ -41,7 +41,7 @@ $$
 $$
 
 
-import LiveGlslCodeBlock from "../../static/js/liveGLSLCodeBlock";
+import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch4/exercise_4_1.frag';
 
 <LiveGlslCodeBlock fragName='exercise_4_1.frag' fragCode={code} />

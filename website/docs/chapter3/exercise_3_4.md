@@ -75,7 +75,7 @@ h(x) = 6x^5 - 15x^4 + 10x^3 &\Rightarrow h'(x) = 30x^2(x^2 - 2x + 1)
 \end{align*}
 $$
 
-import LiveGlslCodeBlock from "../../static/js/liveGLSLCodeBlock";
+import LiveGlslCodeBlock from "/js/liveGLSLCodeBlock";
 import code from '!!raw-loader!/frags/ch3/exercise_3_4.frag';
 
 <LiveGlslCodeBlock fragName='exercise_3_4.frag' fragCode={code} />

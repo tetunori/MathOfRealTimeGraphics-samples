@@ -11,7 +11,7 @@ function liveGLSLCodeBlock(props) {
 
   return (
     <>
-      <GLSLCanvasBox baseUrl="/MathOfRealTimeGraphics-samples" fragCode={code} />
+      <GLSLCanvasBox fragCode={code} />
       <div className={styles.liveEditorContainer}>
         <div className={styles.liveEditorHeader}> {fragName} </div>
         <LiveProvider code={code} language="glsl" theme={prismTheme}>
