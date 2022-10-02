@@ -4,9 +4,7 @@
  * work well for content-centric websites.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap");
 
 /* You can override the default Infima variables here. */
 :root {
@@ -32,7 +30,6 @@
   --ifm-color-primary-lighter: #bfc9e8;
   --ifm-color-primary-lightest: #e8ebf7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-heading-font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 /* [data-theme='dark'] {
