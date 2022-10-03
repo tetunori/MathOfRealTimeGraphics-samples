@@ -6,24 +6,24 @@ uniform float u_time;
 uniform vec2 u_resolution;
 //begin rot
 vec2 rot2(vec2 p, float t){
-    return vec2(cos(t) * p.x -sin(t) * p.y, sin(t) * p.x + cos(t) * p.y);
+  return vec2(cos(t) * p.x -sin(t) * p.y, sin(t) * p.x + cos(t) * p.y);
 }
 vec3 rotX(vec3 p, float t){
-    return vec3(p.x, rot2(p.yz, t));
+  return vec3(p.x, rot2(p.yz, t));
 }
 vec3 rotY(vec3 p, float t){
-    return vec3(p.y, rot2(p.zx, t)).zxy;
+  return vec3(p.y, rot2(p.zx, t)).zxy;
 }
 vec3 rotZ(vec3 p, float t){
-    return vec3(rot2(p.xy, t), p.z);
+  return vec3(rot2(p.xy, t), p.z);
 }
 vec3 euler(vec3 p, vec3 t){
-    return rotZ(rotY(rotX(p, t.x), t.y), t.z);
+  return rotZ(rotY(rotX(p, t.x), t.y), t.z);
 }
 //end rot
 float smin(float d1, float d2, float r){
-    float c = clamp(0.5 + (d2 - d1) * (0.5 / r), 0.0, 1.0);
-    return mix(d2, d1, c) - r * c * (1.0 - c);
+  float c = clamp(0.5 + (d2 - d1) * (0.5 / r), 0.0, 1.0);
+  return mix(d2, d1, c) - r * c * (1.0 - c);
 }
 
 // Reference: MIT License Copyright (c) 2018 Mikael Hvidtfeldt Christensen
@@ -109,9 +109,9 @@ float sceneSDF(vec3 p){
 vec3 gradSDF(vec3 p){
   float eps = 0.003;
   return normalize(vec3(
-      sceneSDF(p + vec3(eps, 0.0, 0.0)) - sceneSDF(p - vec3(eps, 0.0, 0.0)),
-      sceneSDF(p + vec3(0.0, eps, 0.0)) - sceneSDF(p - vec3(0.0, eps, 0.0)),
-      sceneSDF(p + vec3(0.0, 0.0, eps)) - sceneSDF(p - vec3(0.0, 0.0, eps))
+    sceneSDF(p + vec3(eps, 0.0, 0.0)) - sceneSDF(p - vec3(eps, 0.0, 0.0)),
+    sceneSDF(p + vec3(0.0, eps, 0.0)) - sceneSDF(p - vec3(0.0, eps, 0.0)),
+    sceneSDF(p + vec3(0.0, 0.0, eps)) - sceneSDF(p - vec3(0.0, 0.0, eps))
   ));
 }
 
@@ -136,15 +136,15 @@ void main(){
   ray = normalize(ray);
   fragColor.rgb = vec3(0.078, 0.129, 0.239);
   for(int i = 0; i < 50; i ++ ){
-      if (sceneSDF(rPos) > 0.001){
-          rPos += sceneSDF(rPos) * ray;
-      } else {
-          float amb = 0.1;
-          float diff = 0.9 * max(dot(normalize(lDir), gradSDF(rPos)), 0.0);
-          vec3 col = vec3(0.988, 0.639, 0.067);
-          fragColor.rgb = col * (diff + amb);
-          break;
-      }
+    if (sceneSDF(rPos) > 0.001){
+      rPos += sceneSDF(rPos) * ray;
+    } else {
+      float amb = 0.1;
+      float diff = 0.9 * max(dot(normalize(lDir), gradSDF(rPos)), 0.0);
+      vec3 col = vec3(0.988, 0.639, 0.067);
+      fragColor.rgb = col * (diff + amb);
+      break;
+    }
   }
   fragColor.a = 1.0;
 }
