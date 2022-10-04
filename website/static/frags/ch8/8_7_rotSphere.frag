@@ -6,23 +6,29 @@ uniform float u_time;
 uniform vec2 u_resolution;
 const float PI = 3.14159265359;
 const float TAU = 6.2831853;
+
 //begin rot
 vec2 rot2(vec2 p, float t){
   return vec2(cos(t) * p.x -sin(t) * p.y, sin(t) * p.x + cos(t) * p.y);
 }
+
 vec3 rotX(vec3 p, float t){
   return vec3(p.x, rot2(p.yz, t));
 }
+
 vec3 rotY(vec3 p, float t){
   return vec3(p.y, rot2(p.zx, t)).zxy;
 }
+
 vec3 rotZ(vec3 p, float t){
   return vec3(rot2(p.xy, t), p.z);
 }
+
 vec3 euler(vec3 p, vec3 t){
   return rotZ(rotY(rotX(p, t.x), t.y), t.z);
 }
 //end rot
+
 float sphereSDF(vec3 p, vec3 c, float r){
   return length(p - c) - r;
 }
@@ -32,6 +38,7 @@ float sceneSDF(vec3 p){
   float scale = 0.3;
   return sphereSDF(p, cent, scale);
 }
+
 vec3 gradSDF(vec3 p){
   float eps = 0.001;
   return normalize(vec3(

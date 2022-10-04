@@ -5,18 +5,23 @@ out vec4 fragColor;
 uniform float u_time;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
+
 float circleSDF(vec2 p, vec2 c, float r){
   return length(p - c) - r;
 }
+
 float contour(float v){
   return step(abs(v), 0.002);
 }
+
 float point(vec2 p, vec2 c){
   return step(length(p-c), 0.01);
 }
+
 float line(vec2 p, vec2 c, vec2 d){
   return step(abs(dot(p - c, vec2(-d.y, d.x))), 0.002);
 }
+
 void main(){
   vec2 pos = (2.0 * gl_FragCoord.xy -u_resolution.xy)/ u_resolution.yy;
   vec2 cPos = vec2(-0.5, 0.0);  //camera position

@@ -4,13 +4,16 @@ precision highp int;
 out vec4 fragColor;
 uniform float u_time;
 uniform vec2 u_resolution;
+
 float sphereSDF(vec3 p, vec3 cent, float rad){
   return distance(p, cent) - rad;
 }
+
 float smin(float a, float b, float k){
   float h = clamp(0.5 - 0.5 * (b - a) / k, 0.0, 1.0);
-return mix(a, b, h) - k * h * (1.0 - h); 
+  return mix(a, b, h) - k * h * (1.0 - h); 
 }
+
 float sceneSDF(vec3 p){
   float[3] smallS, bigS;
   for(int i = 0; i < 3; i ++ ){
@@ -22,6 +25,7 @@ float sceneSDF(vec3 p){
   float minus = smin(smallS[2], bigS[2], 0.5);
   return min(min(cap, cup), minus);
 }
+
 vec3 gradSDF(vec3 p){
   float eps = 0.0001;
   return normalize(vec3(
@@ -30,6 +34,7 @@ vec3 gradSDF(vec3 p){
     sceneSDF(p + vec3(0.0, 0.0, eps)) - sceneSDF(p + vec3(0.0, 0.0, - eps))
   ));
 }
+
 void main(){
   vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution) / min(u_resolution.x, u_resolution.y);
 

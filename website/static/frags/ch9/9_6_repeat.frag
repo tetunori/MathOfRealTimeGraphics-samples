@@ -4,19 +4,24 @@ precision highp int;
 out vec4 fragColor;
 uniform float u_time;
 uniform vec2 u_resolution;
+
 //begin rot
 vec2 rot2(vec2 p, float t){
   return vec2(cos(t) * p.x -sin(t) * p.y, sin(t) * p.x + cos(t) * p.y);
 }
+
 vec3 rotX(vec3 p, float t){
   return vec3(p.x, rot2(p.yz, t));
 }
+
 vec3 rotY(vec3 p, float t){
   return vec3(p.y, rot2(p.zx, t)).zxy;
 }
+
 vec3 rotZ(vec3 p, float t){
   return vec3(rot2(p.xy, t), p.z);
 }
+
 vec3 euler(vec3 p, vec3 t){
   return rotZ(rotY(rotX(p, t.x), t.y), t.z);
 }
@@ -31,6 +36,7 @@ float sceneSDF(vec3 p){
   float scale = 0.1;
   return sphereSDF(fract(p+0.5)-0.5, center, scale);
 }
+
 vec3 gradSDF(vec3 p){
   float eps = 0.001;
   return normalize (vec3(
