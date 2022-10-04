@@ -69,43 +69,43 @@ void init( int idx ) {
   W = param.z;
   U = param.w;
 
-	float cospin=cos(PI/Degree), scospin=sqrt(0.75-cospin*cospin);
-	nc=vec3(-0.5,-cospin,scospin);// 3rd folding plane. The two others are xz and yz planes
-	pab=vec3(0.,0.,1.);
-	pbc=vec3(scospin,0.,0.5);
-	pca=vec3(0.,scospin,cospin);
+  float cospin=cos(PI/Degree), scospin=sqrt(0.75-cospin*cospin);
+  nc=vec3(-0.5,-cospin,scospin);// 3rd folding plane. The two others are xz and yz planes
+  pab=vec3(0.,0.,1.);
+  pbc=vec3(scospin,0.,0.5);
+  pca=vec3(0.,scospin,cospin);
 
-	initVertex=normalize((V*pab+W*pbc+U*pca));
-	pbc=normalize(pbc);
-	pca=normalize(pca);
+  initVertex=normalize((V*pab+W*pbc+U*pca));
+  pbc=normalize(pbc);
+  pca=normalize(pca);
 }
 
 vec3 fold(vec3 pos) {
-	int max = 5; //int(Degree);
-	for(int i=0;i<7;i++){
-		pos.xy=abs(pos.xy);
-		float t=-2.*min(0.,dot(pos,nc));
-		pos+=t*nc;
-		if (i>=max) break;
-	}
-	return pos;
+  int max = 5; //int(Degree);
+  for(int i=0;i<7;i++){
+    pos.xy=abs(pos.xy);
+    float t=-2.*min(0.,dot(pos,nc));
+    pos+=t*nc;
+    if (i>=max) break;
+  }
+  return pos;
 }
 
 float D2Planes(vec3 pos) {
-	float d0=dot(pos,pab)-dot(pab,initVertex);
-	float d1=dot(pos,pbc)-dot(pbc,initVertex);
-	float d2=dot(pos,pca)-dot(pca,initVertex);
-	
-	return abs(max(max(d0,d1),d2));
+  float d0=dot(pos,pab)-dot(pab,initVertex);
+  float d1=dot(pos,pbc)-dot(pbc,initVertex);
+  float d2=dot(pos,pca)-dot(pca,initVertex);
+  
+  return abs(max(max(d0,d1),d2));
 }
 
 float regularPolyhedronSDF(vec3 pos, int idx, float s){
   init(idx);
   vec3 oPos = pos;
-	pos=fold(pos);
-	float d=10000.;
-	d=min(d,D2Planes(pos));
-	return d;
+  pos=fold(pos);
+  float d=10000.;
+  d=min(d,D2Planes(pos));
+  return d;
 }
 
 float sceneSDF(vec3 p){
