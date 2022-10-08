@@ -41,7 +41,6 @@ float smin(float d1, float d2, float r){
 vec3 nc,pNorm,pab,pbc,pca;
 float Degree = 5.0;
 float V=0., W=1., U = 0.;
-int polyidx = 0;
 
 // degree, v, w, u
 vec4[5] paramArray = vec4[](
@@ -89,8 +88,7 @@ float D2Planes(vec3 pos) {
   return abs(max(max(d0,d1),d2));
 }
 
-float regularPolyhedronSDF(vec3 pos, int idx, float s){
-  init(idx);
+float regularPolyhedronSDF(vec3 pos, float s){
   vec3 oPos = pos;
   pos=fold(pos);
   float d=10000.;
@@ -99,7 +97,7 @@ float regularPolyhedronSDF(vec3 pos, int idx, float s){
 }
 
 float sceneSDF(vec3 p){
-  return regularPolyhedronSDF(p, polyidx, 0.5);
+  return regularPolyhedronSDF(p, 0.5);
 }
 
 vec3 gradSDF(vec3 p){
@@ -125,7 +123,8 @@ void main(){
   vec3 lDir = euler(vec3(0.0, 0.0, 1.0), t);
 
   float sec = 6.0;
-  polyidx = int(floor(mod(float(u_time),5.0*sec)/sec));
+  int polyidx = int(floor(mod(float(u_time),5.0*sec)/sec));
+  init(polyidx);
 
   vec3 ray = cSide * p.x + cUp * p.y + cDir * targetDepth;
   vec3 rPos = ray + cPos;
